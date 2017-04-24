@@ -1,0 +1,4 @@
+/*  5th part of investig (re-orderings)
+ http://stackoverflow.com/questions/141562/sql-to-find-the-number-of-distinct-values-in-a-column
+ */
+-- SELECT DISTINCT column_name FROM table_name;
