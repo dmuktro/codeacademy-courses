@@ -4,8 +4,13 @@
 SELECT COUNT(*) FROM fake_apps
 WHERE price = 0;
 
--- grouping BY field
+-- grouping COUNT by field
 SELECT price, COUNT(*) FROM fake_apps
 GROUP BY price;
 
 -- MAX function 
+SELECT name, category, MAX(downloads) FROM fake_apps
+GROUP BY category;
+
+-- MIN function
+SELECT MIN(downloads), category FROM fake_apps;
