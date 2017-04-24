@@ -1,0 +1,11 @@
+-- lesson on  https://www.codecademy.com/en/courses/learn-sql/lessons/aggregate-functions/exercises/
+
+-- coditional COUNT
+SELECT COUNT(*) FROM fake_apps
+WHERE price = 0;
+
+-- grouping BY field
+SELECT price, COUNT(*) FROM fake_apps
+GROUP BY price;
+
+-- MAX function 
