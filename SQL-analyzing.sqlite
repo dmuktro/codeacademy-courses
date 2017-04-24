@@ -2,19 +2,10 @@
 /* SQL: Analyzing Business Metrics
  */
 
-select date(ordered_at), /**/ 
-round(sum(amount_paid), 2) 
-from orders 
-  order_items on /**/ 
-	order.id = order_items.order_id 
-group by date(ordered_at)
-order by date(ordered_at); 
-
-/* answer for instructions
- */
 select date(ordered_at), round(sum(amount_paid), 2)
 from orders
     join order_items on 
       orders.id = order_items.order_id
+      where name = 'kale-smoothie'
 group by 1
 order by 1;
