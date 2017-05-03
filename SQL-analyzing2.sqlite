@@ -1,4 +1,31 @@
-/*  5th part of investig (re-orderings)
- http://stackoverflow.com/questions/141562/sql-to-find-the-number-of-distinct-values-in-a-column
- */
--- SELECT DISTINCT column_name FROM table_name;
+--In the final select statement, daily_revenue.dt represents the date, while daily_revenue.rev / daily_players.players is the daily revenue divided by the number of players that day. In full, it represents how much the company is making per player, per day.
+with daily_revenue as (
+  select
+    date(created_at) as dt,
+    round(sum(price), 2) as rev
+  from purchases
+  where refunded_at is null
+  group by 1
+), 
+daily_players as (
+  select
+    date(created_at) as dt,
+    count(distinct (user_id)) as players
+  from gameplays
+  group by 1
+)
+select
+  daily_revenue.dt,
+  daily_revenue.rev / daily_players.players
+from daily_revenue
+  join daily_players using (dt);
+
+
+--we used using instead of on in the join clause. This is a special case join.
+from daily_revenue
+  join daily_players using (dt);
+--When the columns to join have the same name in both tables you can use 
+--using instead of on. Our use of the using keyword is in this case equivalent to this clause:
+from daily_revenue
+  join daily_players on
+    daily_revenue.dt = daily_players.dt;
