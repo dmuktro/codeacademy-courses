@@ -33,8 +33,9 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   color: white;
-}
-
+/* insereted as for INSTRUCTIONS */  
+   font-size: 1.5em;
+/* insereted as for INSTRUCTIONS */}
 /* Blog Post */
 
 #blog {
@@ -61,13 +62,17 @@ body {
 }
 
 .post h2 {
-  
+/* insereted as for INSTRUCTIONS */  
+   font-size: 1.75em;  
   
 }
 
 .post h3 {
   
   color: #999999;
+/* insereted as for INSTRUCTIONS */  
+   font-size: 1.25em;  
+    
 }
 
 .post .opening-line {
@@ -101,4 +106,6 @@ footer {
   
   color: #999999;
   text-align: center;
-}
+/* insereted as for INSTRUCTIONS */  
+   font-size: 0.75em;    
+  }
