@@ -1,5 +1,10 @@
 /* Universal Styles */
 
+/* INSERTED */
+html {
+    font-size: 16px;
+}
+/* INSERTED */
 
 body {
   background-color: white;
@@ -33,8 +38,8 @@ body {
   font-weight: 300;
   color: white;
 /* insereted as for INSTRUCTIONS */  
-   font-size: 1.5em;
-}
+   font-size: 3.75rem;
+/* insereted as for INSTRUCTIONS */}
 /* Blog Post */
 
 #blog {
@@ -62,7 +67,7 @@ body {
 
 .post h2 {
 /* insereted as for INSTRUCTIONS */  
-   font-size: 1.75em;  
+   font-size: 1.875rem;  
   
 }
 
@@ -70,7 +75,7 @@ body {
   
   color: #999999;
 /* insereted as for INSTRUCTIONS */  
-   font-size: 1.25em;  
+   font-size: 1.125rem;  
     
 }
 
@@ -106,5 +111,5 @@ footer {
   color: #999999;
   text-align: center;
 /* insereted as for INSTRUCTIONS */  
-   font-size: 0.75em;    
+   font-size: 1.125rem;    
   }
