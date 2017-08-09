@@ -1,4 +1,9 @@
 -- https://www.codecademy.com/courses/sql-table-transformation/lessons/subqueries/exercises/table-transformation
 select * 
-from flights by 1
+from flights 
 limit 10
+
+-- next part
+SELECT code 
+  FROM airports 
+  WHERE elevation < 2000;
