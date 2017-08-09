@@ -58,8 +58,7 @@ SELECT a.dep_month,
  GROUP BY 1,2
  ORDER BY 1,2;
  
-
--- next 6of7  	Correlated Subqueries II 	EXAMPLE
+ -- next 6of7  	Correlated Subqueries II 	EXAMPLE
 SELECT carrier, id, (
 	SELECT COUNT(*)
 	  FROM flights f
@@ -76,3 +75,6 @@ SELECT origin, id, (
 		AND f.origin=flights.origin) + 1
   	AS flight_sequence_number
 FROM flights;
+
+-- LESSON done
+--------------
