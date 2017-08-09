@@ -3,7 +3,15 @@ select *
 from flights 
 limit 10
 
--- next part
+-- part 1of7
 SELECT code 
   FROM airports 
   WHERE elevation < 2000;
+
+-- next 2of7
+SELECT * 
+FROM flights 
+WHERE origin in (
+    SELECT code 
+    FROM airports 
+    WHERE elevation < 2000);
