@@ -16,4 +16,45 @@ WHERE origin in (
     FROM airports 
     WHERE elevation < 2000);
 
--- next 3of7  Non-Correlated Subqueries II
+-- next 3of7  	Non-Correlated Subqueries II
+SELECT * 
+FROM flights 
+WHERE origin in (
+    SELECT code 
+    FROM airports 
+    WHERE faa_region = 'ASO');
+
+-- next 4of7  	Non-Correlated Subqueries III	EXAMPLE
+SELECT a.dep_month,
+
+       AVG(a.flight_count) AS average_flights
+  FROM (
+        SELECT dep_month,
+              dep_day_of_week,
+               dep_date,
+               COUNT(*) AS flight_count
+          FROM flights
+         GROUP BY 1,2,3
+       ) a
+ GROUP BY 1,2
+ ORDER BY 1,2;
+
+-- next 4of7  	Non-Correlated Subqueries III	TASK
+-- Using a subquery, find the average total distance flown by day of week and month.
+-- Be sure to alias the outer query as average_distance and 
+-- the inner query as flight_distance.
+SELECT a.dep_month,
+       a.dep_day_of_week,
+       AVG(a.flight_distance) AS average_flights
+  FROM (
+        SELECT dep_month,
+              dep_day_of_week,
+               dep_date,
+               distance,
+               SUM(distance) AS flight_distance
+          FROM flights
+         GROUP BY 1,2,3
+       ) a
+ GROUP BY 1,2
+ ORDER BY 1,2;
+ 
