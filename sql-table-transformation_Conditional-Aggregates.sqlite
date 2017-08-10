@@ -1,2 +1,31 @@
 -- https://www.codecademy.com/en/courses/sql-table-transformation/lessons/conditional-aggregates/exercises/aggregate-functions-revisited
--- part 1of8
+-- part 1of8  EXAMPLE 
+SELECT COUNT(*) 
+FROM flights 
+WHERE arr_time IS NOT NULL and destination = 'ATL';
+
+-- part 1of8 
+SELECT COUNT(*) FROM flights;
+
+-- part 2of8 
+SELECT COUNT(*) FROM flights WHERE arr_time IS NOT NULL and destination = "ATL"; 
+
+-- part 3of8 
+SELECT
+    CASE
+        WHEN elevation < 250 THEN 'Low'
+        WHEN elevation BETWEEN 250 AND 1749 THEN 'Medium'
+        WHEN elevation >= 1749 THEN 'High'
+        ELSE 'Unknown'
+    END AS elevation_tier
+    , COUNT(*)
+FROM airports
+GROUP BY 1;
+
+-- part 4of8  
+-- a query to count the number of low elevation airports 
+-- by state where low elevation is defined as less than 1000 ft.
+SELECT    state, 
+    COUNT(CASE WHEN elevation < 1000 THEN 1 ELSE NULL END) as count_low_elevation_aiports 
+FROM airports 
+GROUP BY state;
