@@ -1,7 +1,0 @@
--- https://www.codecademy.com/en/courses/sql-table-transformation/lessons/set-operations/exercises/set-operations
--- part 1of6 
-SELECT * 
-  from new_products 
- 	limit 10;
-
--- 

@@ -1,0 +1,34 @@
+-- https://www.codecademy.com/en/courses/sql-table-transformation/lessons/set-operations/exercises/set-operations
+-- part 1of6 
+SELECT * 
+  from new_products 
+ 	limit 10;
+
+-- part 2of6  TASK
+SELECT brand
+  from new_products 
+UNION
+SELECT brand
+  from legacy_products; 
+
+-- part 3of6  SOLUTION 
+SELECT id, avg(a.sale_price) FROM (
+  SELECT id, sale_price FROM order_items
+  UNION ALL
+  SELECT id, sale_price FROM order_items_historic) AS a 
+  GROUP BY 1;
+
+-- part 4of6  SOLUTION 
+SELECT category FROM new_products
+INTERSECT
+SELECT category FROM legacy_products;
+
+-- part 5of6  SOLUTION 
+-- select the items in the category column that are in the legacy_products table and 
+-- not in the new_products table.
+SELECT category FROM legacy_products
+except
+SELECT category FROM new_products;
+
+-- LESSON done
+--------------
