@@ -29,3 +29,32 @@ SELECT    state,
     COUNT(CASE WHEN elevation < 1000 THEN 1 ELSE NULL END) as count_low_elevation_aiports 
 FROM airports 
 GROUP BY state;
+
+-- part 5of8  EXAMPLE
+SELECT origin, sum(distance) as total_flight_distance, sum(CASE WHEN carrier = 'UA' THEN distance ELSE 0 END) as total_united_flight_distance 
+FROM flights 
+GROUP BY origin;
+
+-- part 5of8 
+SELECT origin, sum(distance) as total_flight_distance, sum(CASE WHEN carrier = 'DL' THEN distance ELSE 0 END) as total_delta_flight_distance 
+FROM flights 
+GROUP BY origin;
+
+-- part 6of8  SOLUTION-STANDARD
+SELECT origin, 100.0*(sum(CASE WHEN carrier = 'DL' THEN distance ELSE 0 END) / sum(distance)) as percentage_flight_distance_from_delta
+FROM flights 
+GROUP BY origin;
+
+-- part 6of8  SOLUTION-my
+SELECT origin, 100.0* sum(CASE WHEN carrier = 'DL' THEN distance ELSE 0 END) / sum(distance) as percentage_flight_distance_from_delta
+FROM flights 
+GROUP BY origin;
+
+-- part 7of8  SOLUTION
+SELECT state, 
+100.0* count(CASE WHEN elevation >= 2000 THEN 1 ELSE null END) / count(*) as percentage_high_elevation_airports 
+FROM airports 
+GROUP BY state;
+
+-- LESSON done
+--------------
