@@ -1,0 +1,72 @@
+-- https://www.codecademy.com/courses/sql-table-transformation/lessons/date-number-string-functions/
+-- Database Schema
+bakeries1000 rows
+id  integer
+distance  integer
+first_name  varchar(255)
+last_name varchar(255)
+city  varchar(255)
+state varchar(255)
+baked_goods500 rows
+id  BIGINT
+cost  double
+manufacture_time  text
+delivery_time text
+cook_time text
+cool_down_time  text
+ingredients_cost  double
+packaging_cost  double
+ingredients varchar (255)
+-- Database Schema
+
+-- part2of9  
+select DATETIME(delivery_time) from baked_goods ;
+
+-- part3of9  EXAMPLE
+SELECT DATE(manufacture_time), count(*) as count_baked_goods
+FROM baked_goods
+GROUP BY DATE(manufacture_time);
+
+-- part3of9
+SELECT DATE(delivery_time), count(*) as count_baked_goods
+FROM baked_goods
+GROUP BY DATE(delivery_time);
+
+-- part4of9   example
+SELECT DATETIME(manufacture_time, '+2 hours', '30 minutes', '1 day') as inspection_time
+FROM baked_goods;
+
+-- part4of9 
+SELECT DATETIME(delivery_time, '+5 hours', '20 minutes', '2 day') as package_time
+FROM baked_goods;
+
+-- part5of9
+SELECT ROUND(distance, 2) as distance_from_market
+FROM bakeries;
+
+-- part6of9
+SELECT id, MAX(cook_time, cool_down_time)
+FROM baked_goods;
+
+-- part7of9
+SELECT first_name || ' ' || last_name as full_name
+FROM bakeries;
+
+-- part8of9
+-- REPLACE(string,from_string,to_string)
+-- The function returns the string string with all occurrences of the 
+-- string from_string replaced by the string to_string.
+-- @example
+SELECT id, REPLACE(ingredients,'_',' ') as item_ingredients
+from baked_goods;
+
+-- @solution
+SELECT id, REPLACE(ingredients,'enriched_flour',' flour') as item_ingredients
+from baked_goods;
+
+-- @reference-SOLUTION
+SELECT REPLACE(ingredients,'enriched_',' ') as item_ingredients
+FROM baked_goods;
+
+-- LESSON done
+--------------
