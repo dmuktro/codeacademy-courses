@@ -1,0 +1,342 @@
+/* ONLINE() -- emulators 
+	http://www.learnshell.org/
+	https://www.jdoodle.com/test-bash-shell-script-online
+	https://www.tutorialspoint.com/execute_bash_online.php
+*/
+
+/* 6o10
+https://www.codecademy.com/courses/learn-the-command-line/lessons/manipulation/exercises/cp-ii?action=lesson_resume 
+*/
+MANIPULATION
+cp II
+
+	cp biopic/cleopatra.txt historical/
+
+To copy a file into a directory, use cp with the source file as the first argument and the destination directory as the second argument. Here, we copy the file biopic/cleopatra.txt and place it in the historical/ directory.
+	cp biopic/ray.txt biopic/notorious.txt historical/
+
+To copy multiple files into a directory, use cp with a list of source files as the first arguments, and the destination directory as the last argument. Here, we copy the files biopic/ray.txt and biopic/notorious.txt into the historical/ directory.
+
+1.
+Let's look at two more ways to use cp.
+Navigate to the comedy/ directory.
+	cd ../../comedy
+
+2.
+In this directory, create a new file named shrek.txt. (Here's a hint on how to do this.)
+
+3.
+Then type
+	cp * satire/
+
+4.
+Navigate to the satire/ directory.
+List all files and directories in the working directory.
+You should see a copy of the files the-office.txt and shrek.txt in this directory. We'll explain how this works in the next exercise.
+
+5.
+Here's another way to use cp.
+Navigate to the action/ directory. Type
+	cd ../../action/
+Here we navigate up two directories, and then into the action/ directory.
+
+6.
+Type
+	cp m*.txt scifi/
+
+7.
+Change directories into scifi/.
+List all files and directories in the working directory.
+You should see a copy of all text files starting with "m": matrix.txt, matrix-reloaded.txt, and matrix-revolutions.txt.
+
+Click Next to learn how this works.
+
+
+/* 7of 10
+https://www.codecademy.com/courses/learn-the-command-line/lessons/manipulation/exercises/wildcards?action=lesson_resume
+*/
+MANIPULATION
+Wildcards
+cp * satire/
+In addition to using filenames as arguments, we can use special characters like * to select groups of files. These special characters are called wildcards. The * selects all files in the working directory, so here we use cp to copy all files into the satire/ directory.
+
+cp m*.txt scifi/
+Here, m*.txt selects all files in the working directory starting with "m" and ending with ".txt", and copies them to scifi/.
+1.
+In addition to copying files, we can move files from the command line.
+Change directories into the action/ directory.
+
+cd ../
+2.
+Type
+
+mv superman.txt superhero/
+3.
+Navigate to the superhero/ directory.
+List all files and directories in the working directory. You should see superman.txt in it.
+4.
+Here's another way to use mv.
+Navigate up one directory from action/superhero/ to action/.
+5.
+Then type
+
+mv wonderwoman.txt batman.txt superhero/
+6.
+Navigate to superhero/ again.
+List all files and directories in the working directory. You should see wonderwoman.txt and batman.txt in it.
+7.
+Here's one more way to use mv.
+Type
+
+mv batman.txt spiderman.txt
+8.
+List all files and directories in the working directory. You should see the file batman.txt has been renamed as spiderman.txt.
+
+Click Next to learn how these commands work.
+
+/* 8of10
+https://www.codecademy.com/courses/learn-the-command-line/lessons/manipulation/exercises/mv?action=lesson_resume
+*/
+mv
+The mv command moves files. It's similar to cp in its usage.
+
+mv superman.txt superhero/
+To move a file into a directory, use mv with the source file as the first argument and the destination directory as the second argument. Here we move superman.txt into superhero/.
+
+mv wonderwoman.txt batman.txt superhero/
+To move multiple files into a directory, use mv with a list of source files as the first arguments, and the destination directory as the last argument. Here, we move wonderwoman.txt and batman.txt into superhero/.
+
+mv batman.txt spiderman.txt
+To rename a file, use mv with the old file as the first argument and the new file as the second argument. By moving batman.txt into spiderman.txt, we rename the file as spiderman.txt.
+1.
+Change directory to comedy/slapstick.
+List all files and directories in the working directory.
+
+cd ../../comedy/slapstick/
+2.
+Type
+
+rm waterboy.txt
+3.
+List all files and directories in the working directory. You should see that waterboy.txt has been removed.
+4.
+Navigate up one directory from comedy/slapstick/ to comedy/.
+5.
+Type
+
+rm -r slapstick
+6.
+List all files and directories in the working directory. You should see that the slapstick/ directory has been removed.
+
+Click Next to learn how the rm command works.
+
+/* 9of10
+https://www.codecademy.com/courses/learn-the-command-line/lessons/manipulation/exercises/rm?action=lesson_resume
+*/
+MANIPULATION
+rm
+rm waterboy.txt
+The rm command deletes files and directories. Here we remove the file waterboy.txt from the filesystem.
+
+rm -r comedy
+The -r is an option that modifies the behavior of the rm command. The -r stands for "recursive," and it's used to delete a directory and all of its child directories.
+
+Be careful when you use rm! It deletes files and directories permanently. There isn't an undelete command, so once you delete a file or directory with rm, it's gone.
+Instructions
+The commands we've covered so far are commonly used to view and change the filesystem.
+
+Let's summarize what we've done so far. Click Next to continue.
+
+/* 10of10
+https://www.codecademy.com/courses/learn-the-command-line/lessons/manipulation/exercises/manipulation-generalizations?
+*/
+MANIPULATION
+Generalizations
+Congratulations! You learned how to use the command line to view and manipulate the filesystem. What can we generalize so far?
+	Options modify the behavior of commands:
+ls -a lists all contents of a directory, including hidden files and directories
+ls -l lists all contents in long format
+ls -t orders files and directories by the time they were last modified
+Multiple options can be used together, like ls -alt
+From the command line, you can also copy, move, and remove files and directories:
+cp copies files
+mv moves and renames files
+rm removes files
+rm -r removes directories
+Wildcards are useful for selecting groups of files and directories
+
+-- 1of13
+https://www.codecademy.com/en/courses/learn-the-command-line/lessons/redirection/exercises/redirection?
+$ echo "Hello"
+Hello
+
+-- 2of13
+https://www.codecademy.com/courses/learn-the-command-line/lessons/redirection/exercises/std-streams?
+$  echo "Hello" > hello.txt
+$ cat hello.txt
+Hello
+
+-- 3of13
+https://www.codecademy.com/courses/learn-the-command-line/lessons/redirection/exercises/your-first-redirect?
+$ ls -l
+total 44
+-rw-r--r-- 1 ccuser ccuser  69 Jul 17  2015 continents.txt
+-rw-r--r-- 1 ccuser ccuser 135 Jul 17  2015 deserts.txt
+-rw-r--r-- 1 ccuser ccuser 223 Jul 17  2015 forests.txt
+-rw-r--r-- 1 ccuser ccuser 179 Jul 17  2015 glaciers.txt
+-rw-r--r-- 1 ccuser ccuser   6 Aug 15 12:31 hello.txt
+-rw-r--r-- 1 ccuser ccuser 191 Jul 17  2015 islands.txt
+-rw-r--r-- 1 ccuser ccuser 140 Jul 17  2015 lakes.txt
+-rw-r--r-- 1 ccuser ccuser 248 Jul 17  2015 mountains.txt
+-rw-r--r-- 1 ccuser ccuser  71 Jul 17  2015 oceans.txt
+-rw-r--r-- 1 ccuser ccuser 164 Jul 17  2015 rivers.txt
+-rw-r--r-- 1 ccuser ccuser 204 Jul 17  2015 volcanoes.txt
+$ cat oceans.txt > continents.tx
+$ cat oceans.txt > continents.txt
+$ cat continents.txt
+Arctic Ocean
+Atlantic Ocean
+Indian Ocean
+Pacific Ocean
+Southern Ocean
+
+-- 4of13
+cat glaciers.txt >> rivers.txt
+
+-- 5of13
+cat < lakes.txt
+
+-- 6of13
+$ cat volcanoes.txt | wc
+     17      26     204
+$ cat volcanoes.txt | wc | cat > islands.txt
+$ cat islands.txt
+     17      26     204
+REDIRECTION
+<
+$ cat < lakes.txt
+< takes the standard input from the file on the right and inputs it into the program on the left. Here, lakes.txt is the standard input for the cat command. The standard output appears in the terminal.
+1.
+Let's try some more redirection commands. In the terminal, type
+
+cat volcanoes.txt | wc
+2.
+Type
+
+cat volcanoes.txt | wc | cat > islands.txt
+3.
+Use cat to output the contents of islands.txt. Notice that three numbers appear as output.
+
+-- 7of13
+$ cat lakes.txt
+Caspian Sea
+Lake Superior
+Lake Victoria
+Lake Michigan
+Lake Taganyika
+Lake Baikal
+Great Bear Lake
+Lake Malawi
+Lake Titicaca
+Lake Nicaragua
+...
+REDIRECTION
+|
+$ cat volcanoes.txt | wc
+| is a "pipe". The | takes the standard output of the command on the left, and pipes it as standard input to the command on the right. You can think of this as "command to command" redirection.
+
+Here the output of cat volcanoes.txt is the standard input of wc. in turn, the wc command outputs the number of lines, words, and characters in volcanoes.txt, respectively.
+
+$ cat volcanoes.txt | wc | cat > islands.txt
+Multiple |s can be chained together. Here the standard output of cat volcanoes.txt is "piped" to the wc command. The standard output of wc is then "piped" to cat. Finally, the standard output of cat is redirected to islands.txt.
+
+You can view the output data of this chain by typing cat islands.txt.
+1.
+A few commands are particularly powerful when combined with redirection. Let's try them out.
+
+First, use cat to output the contents of lakes.txt.
+2.
+We'll begin with sort. In the terminal type
+
+sort lakes.txt
+3.
+Then type
+
+cat lakes.txt | sort > sorted-lakes.txt
+4.
+Use cat to output the contents of sorted-lakes.txt.
+Community Forums
+Get help and ask questions on the Codecademy community forums.
+
+-- 8of13
+REDIRECTION
+sort
+$ sort lakes.txt
+sort takes the standard input and orders it alphabetically for the standard output. Here, the lakes in sort lakes.txt are listed in alphabetical order.
+
+$ cat lakes.txt | sort > sorted-lakes.txt
+Here, the command takes the standard output from cat lakes.txt and "pipes" it to sort. The standard output of sort is redirected to sorted-lakes.txt.
+
+You can view the output data by typing cat on the file sorted-lakes.txt.
+1.
+Use cat to output the contents of deserts.txt.
+2.
+Type
+
+uniq deserts.txt
+3.
+In the terminal type
+
+sort deserts.txt | uniq
+4.
+Then type
+
+sort deserts.txt | uniq > uniq-deserts.txt
+5.
+Use cat to output the contents of uniq-deserts.txt.
+-- output
+$ cat deserts.txt
+Arctic Desert
+Sahara Desert
+Sahara Desert
+Arabian Desert
+Gobi Desert
+Kalahari Desert
+Great Basic Desert
+Syrian Desert
+Kalahari Desert
+
+$ uniq deserts.txt
+Arctic Desert
+Sahara Desert
+Arabian Desert
+Gobi Desert
+Kalahari Desert
+Great Basic Desert
+Syrian Desert
+Kalahari Desert
+
+$ sort deserts.txt | uniq
+Arabian Desert
+Arctic Desert
+Gobi Desert
+Great Basic Desert
+Kalahari Desert
+Sahara Desert
+Syrian Desert
+
+$ sort deserts.txt | uniq > uniq-deserts.txt
+$ cat uniq-deserts.txt
+
+Arabian Desert
+Arctic Desert
+Gobi Desert
+Great Basic Desert
+Kalahari Desert
+Sahara Desert
+Syrian Desert
+$
+
+-- 9of13
+-- task-is
+
