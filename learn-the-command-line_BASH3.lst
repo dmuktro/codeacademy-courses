@@ -1,0 +1,117 @@
+-- 4of11
+-- https://www.codecademy.com/courses/learn-the-command-line/lessons/environment/exercises/aliases-i?action=lesson_resume
+
+-- ~/.bash_profile 
+alias hy="history"
+alias ll="ls -la"
+
+-- EDIT in nano, Then
+source ~/.bash_profile
+
+-- 5of11
+export USER="Jane Doe"
+
+-- 6of11
+export PS1=">> "
+
+-- 7of11
+echo $HOME
+
+-- 9of11
+$ echo $PATH
+/home/ccuser/.bin:/home/ccuser/node_modules/.bin:/home/ccuser/.gem/ruby
+/.bin:/home/ccuser/node_modules/.bin:/home/ccuser/.gem/ruby/2.3.0/bin:/
+al/bin:/usr/sbin:/usr/bin:/sbin:/bin
+$ /bin/pwd
+/home/ccuser/workspace/music
+$ /bin/ls
+artists
+$ pwd
+/home/ccuser/workspace/music
+$ env
+HOSTNAME=fea004d5e22e
+GEM_HOME=/home/ccuser/.gem/ruby/2.3.0
+TERM=xterm
+PATH=/home/ccuser/.bin:/home/ccuser/node_modules/.bin:/home/ccuser/.gem
+/ruby/2.3.0/bin:/home/ccuser/.bin:/home/ccuser/node_modules/.bin:/home/
+ccuser/.gem/ruby/2.3.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/us
+r/bin:/sbin:/bin
+CODEX_RUNNER_PATH=/var/codecademy/codex/runners
+PWD=/home/ccuser/workspace/music
+TZ=Etc/UTC
+PS1=$
+SHLVL=1
+HOME=/home/ccuser
+_=/usr/bin/env
+$
+
+ENVIRONMENT
+PATH
+What happens when you type this command?
+
+$ echo $PATH
+
+/home/ccuser/.gem/ruby/2.0.0/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/bin
+PATH is an environment variable that stores a list of directories separated by a colon. Looking carefully, echo $PATH lists the following directories:
+
+/home/ccuser/.gem/ruby/2.0.0/bin
+/usr/local/sbin
+/usr/local/bin
+/usr/bin
+/usr/sbin
+/sbin
+/bin
+Each directory contains scripts for the command line to execute. The PATH variable simply lists which directories contain scripts.
+
+For example, many commands we've learned are scripts stored in the /bin directory.
+
+/bin/pwd
+This is the script that is executed when you type the pwd command.
+
+/bin/ls
+This is the script that is executed when you type the ls command.
+
+In advanced cases, you can customize the PATH variable when adding scripts of your own.
+Instructions
+1.
+In the command line type
+
+env
+2.
+Then type
+
+env | grep PATH
+(Tip: If you are unable to type |, you can find help here.)
+
+-- 10of11
+ENVIRONMENT
+env
+What happens when you type this command?
+The env command stands for "environment", and returns a list of the environment variables for the current user. 
+Here, the env command returns a number of variables, including PATH, PWD, PS1, and HOME.
+
+env | grep PATH
+env | grep PATH is a command that displays the value of a single environment variable. 
+Here the standard output of env is "piped" to the grep command. 
+grep searches for the value of the variable PATH and outputs it to the terminal.
+
+/*
+ENVIRONMENT
+Generalizations
+Congratulations! You learned to use the bash profile to configure the environment. What can we generalize so far?
+
+The environment refers to the preferences and settings of the current user.
+The nano editor is a command line text editor used to configure the environment.
+~/.bash_profile is where environment settings are stored. You can edit this file with nano.
+environment variables are variables that can be used across commands and programs and hold information about the environment.
+
+export VARIABLE="Value" sets and exports an environment variable.
+USER is the name of the current user.
+PS1 is the command prompt.
+HOME is the home directory. It is usually not customized.
+PATH returns a colon separated list of file paths. It is customized in advanced cases.
+env returns a list of environment variables.
+*/
+
+-- lesson DONE 
+--
