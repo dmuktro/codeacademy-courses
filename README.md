@@ -72,7 +72,6 @@ xmlns="http://www.w3.org/TR/REC-html40">
 	mso-background-source:auto;
 	mso-pattern:auto;
 	white-space:normal;}
--->
 </style>
 -->
 
@@ -87,6 +86,8 @@ DIV будут заменены.-->
 <!----------------------------->
 <!--НАЧАЛО ФРАГМЕНТА ПУБЛИКАЦИИ МАСТЕРА ВЕБ-СТРАНИЦ EXCEL -->
 <!----------------------------->
+
+my result @2017-august-16
 
 <div id="codeACADEMY3_12185" align=center x:publishsource="Excel">
 
