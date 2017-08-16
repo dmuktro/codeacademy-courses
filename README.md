@@ -10,7 +10,9 @@ xmlns="http://www.w3.org/TR/REC-html40">
 <meta name=ProgId content=Excel.Sheet>
 <meta name=Generator content="Microsoft Excel 14">
 <link rel=File-List href="codeACADEMY3_filelist.xml">
+<!--
 <style id="codeACADEMY3_12185_Styles">
+
 <!--table
 	{mso-displayed-decimal-separator:"\,";
 	mso-displayed-thousand-separator:" ";}
@@ -72,6 +74,8 @@ xmlns="http://www.w3.org/TR/REC-html40">
 	white-space:normal;}
 -->
 </style>
+-->
+
 </head>
 
 <body>
